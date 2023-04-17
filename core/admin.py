@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import Group
+from allauth.socialaccount.models import SocialAccount
 
 from .models import Item, OrderItem, Order, Payment, Coupon, Refund, Address, UserProfile
 
@@ -63,3 +66,8 @@ admin.site.register(Coupon)
 admin.site.register(Refund)
 admin.site.register(Address, AddressAdmin)
 admin.site.register(UserProfile)
+
+admin.site.unregister(Site)
+admin.site.unregister(Group)
+admin.site.unregister(SocialAccount)
+
